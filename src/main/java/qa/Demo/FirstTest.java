@@ -55,7 +55,5 @@ public class FirstTest {
         Assertions.assertEquals( "1", qtyValue);
 
         driver.quit();
-
-
     }
 }
