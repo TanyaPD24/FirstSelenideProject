@@ -15,8 +15,6 @@ public class SecondTest {
         driver.manage().addCookie((new Cookie("user_session", "vxgcRNo1e9VgGs7_5cgNfnk5qEWVK-SQhjDpTUWk_3MydWrG")));
         driver.navigate().refresh();
 
-
-
         driver.quit();
 
     }
