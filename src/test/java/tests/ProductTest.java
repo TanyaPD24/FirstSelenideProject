@@ -1,7 +1,9 @@
+package tests;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ProductTest extends BaseTest{
+public class ProductTest extends BaseTest {
     @BeforeEach
     public void setUpProductPage() {
         loginPage.login("standard_user", "secret_sauce");

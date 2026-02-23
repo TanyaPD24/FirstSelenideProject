@@ -1,4 +1,10 @@
+package tests;
+
 import org.junit.jupiter.api.*;
+
+import static constants.Constant.data.NAME_LOGIN;
+import static constants.Constant.data.PASSWORD;
+
 
 
 public class LoginTest extends BaseTest {
@@ -8,7 +14,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void login() {
         loginPage.assertTitle();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(NAME_LOGIN, PASSWORD);
         loginPage.assertNameProductPage();
     }
 

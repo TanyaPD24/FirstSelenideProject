@@ -1,7 +1,5 @@
 package common;
 
-import pages.BasePage;
-
 public class Config {
     /**
      * Spesify the browser for test
