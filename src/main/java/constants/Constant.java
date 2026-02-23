@@ -16,4 +16,9 @@ public class Constant {
     public static final String EXPECTED_NAME_FIRST_PRODUCT = "Sauce Labs Backpack";
     public static final String CART_PAGE_URL = "https://www.saucedemo.com/cart.html";
     public static final String PRODUCT_URL = "https://www.saucedemo.com/inventory.html";
+
+    public static class data {
+        public static final String NAME_LOGIN = "standard_user";
+        public static final String PASSWORD = "secret_sauce";
+    }
 }

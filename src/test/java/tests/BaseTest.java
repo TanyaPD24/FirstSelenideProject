@@ -1,15 +1,13 @@
+package tests;
+
 import common.CommonActions;
 import constants.Constant;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.parallel.Execution;
-import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pages.BasePage;
 import pages.LoginPage;
 import pages.ProductPage;
-
-import java.net.URL;
 
 import static common.Config.BROWSER_OPEN;
 import static common.Config.CLEAR_COOKIES;
