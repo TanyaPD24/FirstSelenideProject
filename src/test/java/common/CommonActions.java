@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+
 import static common.Config.BROWSER;
 import static constants.Constant.Timeout.IMPLICIT_WAIT;
 
@@ -13,7 +14,7 @@ public class CommonActions {
     public static WebDriver createDriver() {
         WebDriver driver = null;
         switch (BROWSER) {
-            case "chrome_Win":
+            case "Chrome_Win":
                 driver = new ChromeDriver();
                 break;
             case "mozilla":

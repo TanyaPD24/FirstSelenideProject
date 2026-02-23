@@ -1,4 +1,4 @@
-package qa.Demo;
+package anotherTests;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Cookie;

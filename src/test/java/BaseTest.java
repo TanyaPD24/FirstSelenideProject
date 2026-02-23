@@ -1,23 +1,33 @@
 import common.CommonActions;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.TestInstance;
-import org.openqa.selenium.JavascriptException;
+import constants.Constant;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pages.BasePage;
-import pages.CarPage;
+import pages.LoginPage;
+import pages.ProductPage;
+
+import java.net.URL;
 
 import static common.Config.BROWSER_OPEN;
 import static common.Config.CLEAR_COOKIES;
 
+//@Execution(ExecutionMode.CONCURRENT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-
 
 public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
-    protected CarPage carPage = new CarPage(driver);
+    protected LoginPage loginPage = new LoginPage(driver);
+    protected ProductPage productPage = new ProductPage(driver);
+
+    @DisplayName("Авторизация")
+    @BeforeEach
+    public void checkIsRedirectToAuth() {
+        basePage.goToUrl(Constant.URL);
+    }
 
     @AfterEach
     void clearCookiesAndLocalStorages() {

@@ -1,4 +1,4 @@
-package qa.Demo;
+package anotherTests;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
