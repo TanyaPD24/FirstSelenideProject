@@ -3,6 +3,7 @@ package tests;
 import common.CommonActions;
 import constants.Constant;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pages.BasePage;
@@ -12,11 +13,12 @@ import pages.ProductPage;
 import static common.Config.BROWSER_OPEN;
 import static common.Config.CLEAR_COOKIES;
 
+@ExtendWith(Listener.class)
 //@Execution(ExecutionMode.CONCURRENT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 public class BaseTest {
-    protected WebDriver driver = CommonActions.createDriver();
+    public static WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage = new BasePage(driver);
     protected LoginPage loginPage = new LoginPage(driver);
     protected ProductPage productPage = new ProductPage(driver);

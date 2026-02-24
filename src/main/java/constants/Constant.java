@@ -8,7 +8,7 @@ public class Constant {
     }
 
     public static final String URL = "https://www.saucedemo.com/";
-    public static final String EXPECTED_TITLE = "Swag Labs";
+    public static final String EXPECTED_TITLE = "Swag Labs-";
     public static final String EXPECTED_TITLE_PRODUCT_PAGE = "Products";
     public static final String ERROR_INVALID_CREDENTIALS = "Epic sadface: Username and password do " +
             "not match any user in this service";
