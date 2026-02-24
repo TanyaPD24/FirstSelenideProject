@@ -12,7 +12,7 @@ import static constants.Constant.Timeout.EXPLICIT_WAIT;
 
 public class BasePage {
 
-    WebDriver driver;
+    public WebDriver driver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

@@ -23,11 +23,12 @@ public class LoginPage extends BasePage {
         String actualTitle = driver.getTitle();
 
         assert actualTitle != null;
-        if (actualTitle.equals(EXPECTED_TITLE)) {
-            System.out.println("Actual title - OK - " + EXPECTED_TITLE);
-        } else {
-            System.out.println("not ok - " + actualTitle);
-        }
+//        if (actualTitle.equals(EXPECTED_TITLE)) {
+//            System.out.println("Actual title - OK - " + EXPECTED_TITLE);
+//        } else {
+//            System.out.println("not ok - " + actualTitle);
+//        }
+        Assertions.assertEquals(EXPECTED_TITLE, actualTitle);
 
     }
 
