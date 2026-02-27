@@ -1,6 +1,7 @@
 package tests;
 
 
+import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.TestWatcher;
@@ -12,9 +13,10 @@ import pages.BasePage;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class Listener implements TestWatcher {
-    public static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Listener.class);
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {
@@ -29,7 +31,7 @@ public class Listener implements TestWatcher {
                 TakesScreenshot ts = (TakesScreenshot) BaseTest.driver;
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                File screenshotDir = new File("build/report/tests");
+                File screenshotDir = new File("build/reports/tests/");
                 if (!screenshotDir.exists()) {
                     screenshotDir.mkdirs();
                 }
@@ -38,13 +40,21 @@ public class Listener implements TestWatcher {
                 FileUtils.copyFile(source, destination);
 
                 LOGGER.info("Screenshot saved to: " + destination.getPath());
+                Allure.addAttachment("Screenshot on failure", "image/png",
+                        Files.newInputStream(destination.toPath()), "png");
 
             } catch (IOException e) {
                 LOGGER.info("Exception on saving screenshot");
                 e.printStackTrace();
             }
+
         } else {
             LOGGER.info("Driver is null, cannot take screenshot");
         }
+
+    }
+
+    public byte[] attachScreenshotToAllure(TakesScreenshot takesScreenshot) {
+        return takesScreenshot.getScreenshotAs(OutputType.BYTES);
     }
 }
